@@ -1,0 +1,14 @@
+{
+  "name": "backbone.papertrail",
+  "version": "0.0.0",
+  "description": "An extension for Backbone models that keeps a history of it's attributes",
+  "main": "backbone.papertrail.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Backbone"
+  ],
+  "author": "Moudy <m@moudy.me>",
+  "license": "BSD"
+}
