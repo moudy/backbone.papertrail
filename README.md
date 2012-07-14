@@ -1,6 +1,5 @@
 # PaperTrail
 
-## An extension for Backbone models to keep a history of it's
-attributes. 
+## Keep track of your model's changes
 
 Shamelessly ripping off the name form the [Ruby Library](https://github.com/airblade/paper_trail/)
