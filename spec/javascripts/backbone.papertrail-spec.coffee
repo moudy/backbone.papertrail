@@ -22,7 +22,7 @@ describe "Backbone.PaperTrail", ->
 
 
   describe "rolling back to previous state(s)", ->
-    it "should rollback to it's prevois state", ->
+    it "should rollback to it's previous state", ->
       book.store().set(edit2)
       book.store().set(edit3)
       book.rollback()
@@ -43,7 +43,7 @@ describe "Backbone.PaperTrail", ->
 
 
   describe "edits", ->
-    it "should keep the eidts array updated to reflect number of edits", ->
+    it "should keep the edits array updated to reflect number of edits", ->
       book.store().set(edit2)
       book.store().set(edit3)
       expect(book.edits().length).toBe(2)
