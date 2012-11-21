@@ -2,11 +2,11 @@
 
 ### Keep track of your model's changes
 
-Shamelessly ripping off the name from the [Ruby Library](https://github.com/airblade/paper_trail/)
+Shamelessly ripping off the name from the [Ruby Library](https: // github.com/airblade/paper_trail/)
 
 ## Installation
 
-Backbone.PaperTrail (hereafter referred to as "PaperTrail") is dependent on [Backbone.js](http://backbonejs.org), which is in turn dependent on [Underscore.js](http://underscorejs.org).
+Backbone.PaperTrail (hereafter referred to as "PaperTrail") is dependent on [Backbone.js](http: // backbonejs.org), which is in turn dependent on [Underscore.js](http: // underscorejs.org).
 
 Include PaperTrail in your HTML head
 
@@ -17,7 +17,7 @@ Include PaperTrail in your HTML head
 Or in your Rails 3.1 and new Asset Pipeline
 
 ``` ruby
-//= require backbone.papertrail
+ // = require backbone.papertrail
 ```
 
 Or however else you include your JavaScript files.  Just ensure that the file is included *after* Backbone and Underscore.
@@ -55,7 +55,7 @@ formModel.store().set("firstName", "Roger");
 
 formModel.restore();
 
-formModel.get("firstName") # returns "Bill";
+formModel.get("firstName") // returns "Bill";
 ```
 
 Note that any `set()` calls made after your first `store()` will not be used for `restore()`.
@@ -68,8 +68,8 @@ formModel.store().set("lastName", "Black");
 
 formModel.restore();
 
-formModel.get("firstName"); # returns "Bill"
-formModel.get("lastName"); # returns undefined
+formModel.get("firstName"); // returns "Bill"
+formModel.get("lastName"); // returns undefined
 ```
 
 ### rollback
@@ -87,12 +87,12 @@ formModel.store().set("firstName", "Rebecca");
 formModel.store().set("lastName", "Garcia");
 
 formModel.rollback();
-formModel.get("firstName"); # returns "Rebecca"
-formModel.get("lastName"); # returns "Jones"
+formModel.get("firstName"); // returns "Rebecca"
+formModel.get("lastName"); // returns "Jones"
 
 formModel.rollback(2);
-formModel.get("firstName"); # returns "Susan"
-formModel.get("lastName"); # returns "Black"
+formModel.get("firstName"); // returns "Susan"
+formModel.get("lastName"); // returns "Black"
 ```
 
 ### wasEdited
@@ -106,14 +106,14 @@ Returns an array of objects, with each object representing a full iteration of t
 ``` javascript
 formModel.set("firstName", "John");
 formModel.set("lastName", "Smith");
-formModel.edits(); # returns empty array
+formModel.edits(); // returns empty array
 
 formModel.store().set("firstName", "Joe");
 formModel.store().set("lastName", "Black");
-formModel.edits(); # returns array with one object, {firstName: "Joe", lastName: "Black"}
+formModel.edits(); // returns array with one object, {firstName: "Joe", lastName: "Black"}
 
 formModel.store().set("firstName", "Susan");
-formModel.edits(); # returns array with two object, {firstName: "Joe", lastName: "Black"} and {firstName: "Susan", lastName: "Black"}
+formModel.edits(); // returns array with two object, {firstName: "Joe", lastName: "Black"} and {firstName: "Susan", lastName: "Black"}
 ```
 
 ### priorAttributes
@@ -123,14 +123,14 @@ Returns an object of attributes representing the model's attributes one step bac
 ``` javascript
 formModel.set("firstName", "John");
 formModel.set("lastName", "Smith");
-formModel.priorAttributes(); # returns undefined
+formModel.priorAttributes(); // returns undefined
 
 formModel.store().set("firstName", "Bill");
-formModel.priorAttributes(); # returns {firstName: "John", lastName: "Smith"}
+formModel.priorAttributes(); // returns {firstName: "John", lastName: "Smith"}
 
 formModel.store().set("lastName", "Jones");
 formModel.store().set("firstName", "Joe");
-formModel.priorAttributes(); # returns {firstName: "Bill", lastName: "Jones"}
+formModel.priorAttributes(); // returns {firstName: "Bill", lastName: "Jones"}
 ```
 
 ### prior
@@ -140,13 +140,13 @@ Returns the value of the specified attribute from the prior iteration of the mod
 ``` javascript
 formModel.set("firstName", "John");
 formModel.set("lastName", "Smith");
-formModel.prior("firstName"); # returns undefined
+formModel.prior("firstName"); // returns undefined
 
 formModel.store().set("firstName", "Bill");
-formModel.prior("firstName"); # returns "John"
-formModel.prior("lastName"); # returns "Smith"
+formModel.prior("firstName"); // returns "John"
+formModel.prior("lastName"); // returns "Smith"
 
 formModel.store().set("lastName", "Jones");
-formModel.prior("firstName"); # returns "Bill"
-formModel.prior("lastName"); # returns "Smith"
+formModel.prior("firstName"); // returns "Bill"
+formModel.prior("lastName"); // returns "Smith"
 ```
