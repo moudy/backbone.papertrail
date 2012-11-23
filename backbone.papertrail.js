@@ -10,7 +10,7 @@
 
       if (!same) this.edits().push(attrs);
 
-      return this;
+      return this; // this is
     },
 
     restore: function (options) {
