@@ -68,7 +68,7 @@ formModel.store().set("lastName", "Black");
 
 formModel.restore();
 
-formModel.get("firstName"); // returns "Bill"
+formModel.get("firstName"); // returns "John"
 formModel.get("lastName"); // returns undefined
 ```
 
